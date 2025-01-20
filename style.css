@@ -1,33 +1,75 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #f5f8fa;
 }
 
+/* Header Styles */
 header {
-    background: #007acc;
+    background: #2b7a78;
     color: white;
-    padding: 1rem;
     text-align: center;
+    padding: 2rem 1rem;
 }
 
 header h1 {
     margin: 0;
+    font-size: 2.5rem;
 }
 
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    background: #3aafa9;
+    border-radius: 5px;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: #def2f1;
+    color: #17252a;
+}
+
+/* Main Content Styles */
 main {
-    padding: 1rem;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
-    background: #333;
+    background: #17252a;
     color: white;
     padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: 2rem;
+    font-size: 0.9rem;
 }

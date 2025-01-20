@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multivalidatiooon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Multivalidation</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="multivalidatiooon.html">Multivalidation</a></li>
+                <li><a href="validation-tool.html">Validation Tool</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <h3>Validating multiple tasks at once or “Multivalidation”</h3>
+
+        <p>When you are reading this you should be already experienced with validating and using JOSM so I will not include basics here.</p>
+        
+        <p>Usually I am validating projects in HOT Tasking Manager that are focused on mapping buildings. I am going to show you an example of my workflow on one of the Mozambique projects because there are two things that are not in every project and it’s very easy to validate in this area so you can try it on your own. Since writing this diary the campaign ended but you can find similar projects using <a href="https://tasks.hotosm.org/explore?difficulty=EASY&exactTypes=1&omitMapResults=1&organisation=M%C3%A9decins%20Sans%20Fronti%C3%A8res%20%28MSF%29%20&types=BUILDINGS">this filter on the HOT Tasking Manager</a>.</p>
+
+        <p>I highly recommend using the shortcuts in JOSM, which you can customize, or you can put tools that you are often using to your toolbar. I will write shortcuts for windows in <code>{}</code>.</p>
+
+        <h2>For Multivalidation in Mozambique I am using these tools:</h2>
+
+        <details>
+            <summary>EXPERT MODE</summary>
+            <p><a href="https://drive.google.com/file/d/1zMk4e-GiKih7q_Z47Tl6S_JYG_dEu8_9/view?usp=sharing">Edit → Preferences {F12} → checkbox in the bottom left corner</a>. Thanks to this you will be able to see some stuff that has been hidden before like the number of each layer, more options for Search or some tools like extrude tool for example. If you are using shortcuts (like {X} for extrude tool) those will work even if you won’t turn on the Expert mode.</p>
+        </details>
+
+        <details>
+            <summary>PLUGINS</summary>
+            <p>List of plugins that I am using and their most useful feature for me:</p>
+            <ul>
+                <li>Buildings_tools - fundamental plugin for mapping buildings</li>
+                <li>Todo - great tool for adding buildings, task areas, anything into list and then easily check all of them one by one</li>
+                <li>Utilsplugin2 - mainly for Replace geometry {Ctrl+Shift+G}</li>
+                <li>Mapathoner - mainly for Selecting non orthogonal buildings</li>
+                <li>Markseen - mark seen areas of the map</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>VALIDATOR RESULTS PANEL</summary>
+            <p>I am using additional custom rules that are flagging some uncommon mistakes made by other mappers. The name is "Validating tasks in HOT TM projects". <a href="https://bit.ly/3zzivTi" target="_blank">Here is their full description with guide how to add them into JOSM</a>.</p>
+        </details>
+        
+        <h4>TASKGRID</h4>
+        <p>Importing borders of every task (taskgrid) in the project. 
+        <a href="https://drive.google.com/file/d/19DuJRtug2F67S5nh2ytmcZSbN20d9ttJ/view?usp=sharing">File → Open Location {Ctrl+L}</a>.
+        </p>
+        <p>Use the URL format:</p>
+        <code>https://tasking-manager-tm4-production-api.hotosm.org/api/v2/projects/PROJECT_ID/tasks/?as_file=true&format=geojson</code>
+
+        <p>For example, for project #12658, the URL would be:</p>
+        <code>https://tasking-manager-tm4-production-api.hotosm.org/api/v2/projects/12658/tasks/?as_file=true&format=geojson</code>
+
+        <h4>MAP PAINT STYLES</h4>
+        <ul>
+            <li><a href="https://github.com/osmlab/applepaintstyles">Apple paint style</a> - Supports detailed visualization.</li>
+            <li><a href="https://drive.google.com/file/d/1a1tUEl9k4gDMOjth_UHvB4jIxj2RvPiw/view?usp=sharing">Highlight shared nodes</a></li>
+            <li><a href="https://raw.githubusercontent.com/martien-176/new-modified-buildings/main/new-modified-buildings.gif">Highlight edited and created buildings</a></li>
+        </ul>
+
+        <h3>USEFUL LINKS</h3>
+        <ul>
+            <li><a href="https://labs.mapbox.com/mapping/becoming-a-power-mapper/advanced-mapping-guide/#buildings">Advanced building mapping guide</a></li>
+            <li><a href="https://bit.ly/3P3HIeK">Examples of feedback messages</a></li>
+            <li><a href="https://www.openstreetmap.org/user/Becky%20Candy/diary/399055">Feedback examples by Becky Candy</a></li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Blog</p>
+    </footer>
+</body>
+</html>
