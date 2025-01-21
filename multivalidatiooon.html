@@ -51,29 +51,99 @@
             <p>I am using additional custom rules that are flagging some uncommon mistakes made by other mappers. The name is "Validating tasks in HOT TM projects". <a href="https://bit.ly/3zzivTi" target="_blank">Here is their full description with guide how to add them into JOSM</a>.</p>
         </details>
         
-        <h4>TASKGRID</h4>
-        <p>Importing borders of every task (taskgrid) in the project. 
-        <a href="https://drive.google.com/file/d/19DuJRtug2F67S5nh2ytmcZSbN20d9ttJ/view?usp=sharing">File → Open Location {Ctrl+L}</a>.
+        <h2>Taskgrid</h2>
+        <p>Importing borders of every task (taskgrid) in the project:</p>
+        <p>
+            <a href="https://drive.google.com/file/d/19DuJRtug2F67S5nh2ytmcZSbN20d9ttJ/view?usp=sharing">
+                File › Open Location {Ctrl+L}
+            </a>.
         </p>
-        <p>Use the URL format:</p>
-        <code>https://tasking-manager-tm4-production-api.hotosm.org/api/v2/projects/PROJECT_ID/tasks/?as_file=true&format=geojson</code>
+        <p>Use the following URL format:</p>
+        <pre>https://tasking-manager-tm4-production-api.hotosm.org/api/v2/projects/PROJECT_ID/tasks/?as_file=true&format=geojson</pre>
+        <p>For example, for project #12658:</p>
+        <pre>https://tasking-manager-tm4-production-api.hotosm.org/api/v2/projects/12658/tasks/?as_file=true&format=geojson</pre>
+        <p>
+            <a href="https://drive.google.com/file/d/19DuJRtug2F67S5nh2ytmcZSbN20d9ttJ/view?usp=sharing">
+                Make sure to tick the option "Download as new layer."
+            </a>
+        </p>
+        <p>
+            Don’t worry about memorizing the URL—JOSM will remember it, and you’ll only need to edit the <code>PROJECT_ID</code> part.
+        </p>
+        <p>
+            I import the taskgrid because, in this project, we are supposed to map buildings outside the task boundary. Since we don’t want to map buildings inside other tasks, the taskgrid helps us determine whether they are inside or not.
+        </p>
 
-        <p>For example, for project #12658, the URL would be:</p>
-        <code>https://tasking-manager-tm4-production-api.hotosm.org/api/v2/projects/12658/tasks/?as_file=true&format=geojson</code>
-
-        <h4>MAP PAINT STYLES</h4>
+        <h2>Map Paint Styles</h2>
+        <p>
+            <a href="https://drive.google.com/file/d/1_zm3HKzl1lutPXvBcVhCSfRqq2vhOgcm/view?usp=sharing">
+                Map paint styles
+            </a> are useful tools that can change how the map appears. I created a custom style for my preferences, and you can do the same using
+            <a href="https://josm.openstreetmap.de/wiki/Help/Styles/MapCSSImplementation">MapCSS</a>.
+        </p>
         <ul>
-            <li><a href="https://github.com/osmlab/applepaintstyles">Apple paint style</a> - Supports detailed visualization.</li>
-            <li><a href="https://drive.google.com/file/d/1a1tUEl9k4gDMOjth_UHvB4jIxj2RvPiw/view?usp=sharing">Highlight shared nodes</a></li>
-            <li><a href="https://raw.githubusercontent.com/martien-176/new-modified-buildings/main/new-modified-buildings.gif">Highlight edited and created buildings</a></li>
+            <li>
+                Missing Maps / Youth Mappers Validators Checks:
+                <a href="https://drive.google.com/file/d/1a1tUEl9k4gDMOjth_UHvB4jIxj2RvPiw/view?usp=sharing">
+                    Highlighting shared nodes
+                </a>
+            </li>
+            <li>
+                Inline Validation:
+                <a href="https://drive.google.com/file/d/1oYBs3Bv_THu-G-e8r6LIvVzVLsiyVMia/view?usp=sharing">
+                    Highlighting overlapping buildings
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/osmlab/applepaintstyles">Apple Paint Style</a>: Can do basically the same as the two styles mentioned above but also much much more. So you can choose paint style on your visual preferences.
+            </li>
+            <li>
+                TM Tasks Grid:
+                <a href="https://drive.google.com/file/d/1IJO30g-XyOW0g9EzdKTLlA3_jdVo1_oi/view?usp=sharing">
+                    Shows task numbers and their states (mapped, validated, not mapped, etc.)
+                </a>
+            </li>
+            <li>
+                New Modified Buildings:
+                <a href="https://raw.githubusercontent.com/martien-176/new-modified-buildings/main/new-modified-buildings.gif">
+                    Highlights edited and created buildings
+                </a>
+            </li>
         </ul>
 
-        <h3>USEFUL LINKS</h3>
+        <h2>Search</h2>
+        <p>Edit › Search {Ctrl+F}. A very useful tool for validation. If you frequently use certain search strings, you can turn them into buttons on your toolbar:</p>
+        <p>
+            Tick the <code>Add toolbar button</code> option in the Search window. You can customize button icons via
+            <a href="https://drive.google.com/file/d/1aF542OojOno5PS1paXl-tBvKnap_j49E/view?usp=sharing">Edit › Preferences {F12} › Toolbar</a> or
+            <a href="https://drive.google.com/file/d/1CfLRwbBKvN21Wwxib6VIrH9A0MikskSJ/view?usp=sharing">Configure Toolbar</a>.
+        </p>
+        <p>Some recommended search strings:</p>
         <ul>
-            <li><a href="https://labs.mapbox.com/mapping/becoming-a-power-mapper/advanced-mapping-guide/#buildings">Advanced building mapping guide</a></li>
-            <li><a href="https://bit.ly/3P3HIeK">Examples of feedback messages</a></li>
-            <li><a href="https://www.openstreetmap.org/user/Becky%20Candy/diary/399055">Feedback examples by Becky Candy</a></li>
+            <li><code>building:-yes</code>: Select all buildings without <code>building=yes</code>.</li>
+            <li><code>building=yes nodes:5-20</code>: Select buildings with 5–20 nodes (useful for catching circular buildings).</li>
+            <li><code>type:way</code>: Select task borders being validated.</li>
+            <li>
+                <code>area[building] > node:connection</code>:
+                <a href="https://drive.google.com/file/d/15UPX1UUFQAL1M7T6P6JIf7z8BXLKOGkt/view?usp=sharing">
+                    Use MapCSS selector in the search panel
+                </a>. Highlights shared nodes for easier selection.
+            </li>
         </ul>
+
+        <h2>Workflow</h2>
+        <p>
+            In Tasking Manager, I select multiple tasks (filtered by user for better feedback). After locking tasks, I check for mapper comments or questions.
+        </p>
+        <p>Steps in JOSM:</p>
+        <ol>
+            <li>Import the taskgrid (<code>File › Open Location</code>).</li>
+            <li>Run validation searches and add flagged results to the Todo list.</li>
+            <li>Check task boundaries and surrounding areas for unmapped buildings.</li>
+        </ol>
+        <p>
+            After validating all tasks, I leave feedback, pointing out mistakes with examples or screenshots. Comments should be clear and concise, with references to specific tasks if needed.
+        </p>
     </main>
     <footer>
         <p>&copy; 2025 My Blog</p>
